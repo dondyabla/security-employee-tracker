@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Security Employee Tracker by scci</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Security Employee Tracker</h1>
+        <h2>Tracking tool used by DoD FSO and other security officers to manage and handle required training, duties, clearance and many other things.</h2>
+        <a href="https://github.com/scci/security-employee-tracker" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a id="security-employee-tracker" class="anchor" href="#security-employee-tracker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Security Employee Tracker</h2>
+
+<p><a href="https://opensource.org/licenses/mit-license.php"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103" alt="MIT Licence"></a>   <a href="https://travis-ci.org/scci/security-employee-tracker"><img src="https://travis-ci.org/scci/security-employee-tracker.svg?branch=master" alt="Build Status"></a> <a href="https://insight.sensiolabs.com/projects/7a8de56d-c4d4-492f-8ea3-d7f8a2441bad"><img src="https://insight.sensiolabs.com/projects/7a8de56d-c4d4-492f-8ea3-d7f8a2441bad/mini.png" alt="SensioLabsInsight"></a> <a href="https://scrutinizer-ci.com/g/scci/security-employee-tracker/?branch=master"><img src="https://scrutinizer-ci.com/g/scci/security-employee-tracker/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a> <a href="https://www.versioneye.com/user/projects/58123c993130eb0043c41242"><img src="https://www.versioneye.com/user/projects/58123c993130eb0043c41242/badge.svg?style=flat-square" alt="Dependency Status"></a> <a href="https://styleci.io/repos/72014517"><img src="https://styleci.io/repos/72014517/shield?branch=master" alt="StyleCI"></a></p>
+
+<p>SET is for FSO and security officers of DoD companies to manage their employees. This includes storing the following:</p>
+
+<ul>
+<li>employee files</li>
+<li>training and briefings</li>
+<li>security clearance</li>
+<li>visitation rights to bases</li>
+<li>employee travel plans</li>
+<li>miscellaneous notes</li>
+<li>employee security checks/duty roster</li>
+<li>newsletters</li>
+<li>import of JPAS</li>
+</ul>
+
+<h2>
+<a id="server-requirements" class="anchor" href="#server-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Requirements</h2>
+
+<p>The application currently utilizes the PHP Laravel 5 framework. It also currently requires an LDAP connection.</p>
+
+<ul>
+<li>PHP &gt;= 5.6.4</li>
+<li>OpenSSL PHP Extension</li>
+<li>PDO PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+<li>Tokenizer PHP Extension</li>
+<li>XML PHP Extension</li>
+<li>LDAP PHP Extension</li>
+<li><a href="https://getcomposer.org/">Composer</a></li>
+</ul>
+
+<p>To view all the various options including cache, database, settings, email, etc..., view the <a href="https://laravel.com/docs/master">Laravel Documentation.</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>From SSH, execute <code>git clone https://github.com/scci/security-employee-tracker.git</code> in your web root directory.</li>
+<li>Set your domain to point to the <code>security-employee-tracker/public</code> directory.</li>
+<li>From SSH, execute <code>composer install</code> from within the <code>security-employee-tracker</code> directory.</li>
+<li>Navigate to your site/install. IE: <a href="http://set.company.com/install">http://set.company.com/install</a> or http://localhost/security-employee-tracker/public/install
+
+<ol>
+<li>Follow the on screen prompts. </li>
+<li>Update your .env file as needed.</li>
+<li>Check for required extensions and permissions.</li>
+<li>Perform the database installation (this may take some time).</li>
+<li>Create Admin User.</li>
+</ol>
+</li>
+<li>Create a cron job/scheduled task: <code>* * * * * php /path/to/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</code> (artisan is located in the application root directory.)</li>
+<li>From SSH, execute <code>php artisan generate:key</code> to have one unique to you (heightened security).</li>
+</ol>
+
+<p><em>Note: Install page will only be available upon initialization.</em></p>
+
+<h2>
+<a id="updating" class="anchor" href="#updating" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Updating</h2>
+
+<ul>
+<li>Execute <code>git pull</code>.</li>
+<li>If there was a database update/new migration files, execute <code>php artisan migrate --force</code>
+</li>
+</ul>
+
+<h2>
+<a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribute</h2>
+
+<p>If you wish to submit enhancements, bug fixes and other changes, please submit a pull request. Pull request must have all changes for a single feature <strong>and test cases</strong>.</p>
+
+<h2>
+<a id="more-information" class="anchor" href="#more-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More Information</h2>
+
+<p>Want more information about the application? <a href="https://github.com/scci/security-employee-tracker/wiki/FAQs">View the Wiki</a>.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/scci/security-employee-tracker/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/scci/security-employee-tracker/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/scci/security-employee-tracker"></a> is maintained by <a href="https://github.com/scci">scci</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
